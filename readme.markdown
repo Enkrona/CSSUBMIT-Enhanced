@@ -42,6 +42,11 @@ Although the compiler of choice on the Missouri S&T campus is the GNU C/C++ comp
   * [Official Documentation](http://valgrind.org/docs/manual/manual.html)
   * Linux Distribution package manager: yum, apt, etc.
 
+* CPPUNIT
+  * [Official Site](http://sourceforge.net/projects/cppunit/)
+  * [Official Documentation](http://sourceforge.net/apps/mediawiki/cppunit/index.php)
+  * Linux Distribution package manager: yum, apt, etc.
+
 ###Installation###
 For multiple users, it is recommended that the script is placed in /usr/local/bin and have the .sh extension removed. Once it is in place, give the script the proper file permissions(`chmod 755 cssubmit`) and it is ready for use.
 
