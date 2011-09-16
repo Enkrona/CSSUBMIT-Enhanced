@@ -35,6 +35,7 @@ Although the compiler of choice on the Missouri S&T campus is the GNU C/C++ comp
 
 * Clang-LLVM
   * [Official Site](http://llvm.org/releases/)
+  * [Official Documentation](http://llvm.org/docs/)
   * Linux Distribution package manager: yum, apt, etc.
 
 * Valgrind
