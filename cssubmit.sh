@@ -124,7 +124,7 @@ user_id=$(id -un)
 mkdir $user_id$user_random
 
 if [ -f typescript ]; then
-	head --lines=700 typescript > student_output
+	head -n 700 typescript > student_output
 fi
 
 cp student_output $user_id$user_random/ 2> /dev/null
@@ -201,6 +201,7 @@ cp *.zsh $user_id$user_random/ 2> /dev/null
 cp *.ksh $user_id$user_random/ 2> /dev/null
 cp *.bash $user_id$user_random/ 2> /dev/null
 cp *.tcsh $user_id$user_random/ 2> /dev/null
+cp *.command $user_id$user_random/ 2> /dev/null
 ###############################################################################
 # PROLOG, Python, & LISP Files
 ###############################################################################
