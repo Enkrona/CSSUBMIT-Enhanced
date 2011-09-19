@@ -18,7 +18,7 @@ fi
 user_random=$RANDOM
 if [ $1 -eq 53 ]; then
 	echo -e "\033[35m >>>>> Submit will now attempt to compile your program files.\033[0m"
-	script -c "clang++ *.cpp -o driver"$user_random -q
+	script -c "g++ *.cpp -o driver"$user_random -q
 	
 	if [ -f driver$user_random ]; then
 		echo -e "\033[35m >>>>> Submit will now attempt to execute your program.\033[0m"
@@ -28,7 +28,7 @@ if [ $1 -eq 53 ]; then
 	fi
 elif [ $1 -eq 73 ]; then
 	echo -e "\033[35m >>>>> Submit will now attempt to compile your program files.\033[0m"
-	script -c "gfortran *.f90 -o driver"$user_random -q
+	script -c "ifort *.f90 -o driver"$user_random -q
 
 	if [ -f driver$user_random ]; then
 		echo -e "\033[35m >>>>> Submit will now attempt to execute your program.\033[0m"
@@ -38,7 +38,7 @@ elif [ $1 -eq 73 ]; then
 	fi
 elif [ $1 -eq 74 ]; then
 	echo -e "\033[35m >>>>> Submit will now attempt to compile your program files.\033[0m"
-	script -c "clang++ *.cpp -o driver"$user_random -q
+	script -c "g++ *.cpp -o driver"$user_random -q
 	
 	if [ -f driver$user_random ]; then
 		echo -e "\033[35m >>>>> Submit will now attempt to execute your program.\033[0m"
@@ -48,7 +48,7 @@ elif [ $1 -eq 74 ]; then
 	fi
 elif [ $1 -eq 153 ]; then
 	echo -e "\033[35m >>>>> Submit will now attempt to compile your program files.\033[0m"
-	script -c "clang++ *.cpp -I/usr/local/include -L/usr/local/lib -lcppunit -ldl -o driver"$user_random -q
+	script -c "g++ *.cpp -I/usr/local/include -L/usr/local/lib -lcppunit -ldl -o driver"$user_random -q
 	
 	if [ -f driver$user_random ]; then
 		echo -e "\033[35m >>>>> Submit will now attempt to execute your program.\033[0m"
@@ -87,21 +87,6 @@ cp *.cpp $user_id$user_random/ 2> /dev/null
 cp *.c $user_id$user_random/ 2> /dev/null
 cp *.dat $user_id$user_random/ 2> /dev/null
 cp *.txt $user_id$user_random/ 2> /dev/null
-cp *.xlsx $user_id$user_random/ 2> /dev/null
-cp *.pptx $user_id$user_random/ 2> /dev/null
-cp *.docx $user_id$user_random/ 2> /dev/null
-cp *.rtf $user_id$user_random/ 2> /dev/null
-cp *.rtfd $user_id$user_random/ 2> /dev/null
-cp *.pages $user_id$user_random/ 2> /dev/null
-cp *.numbers $user_id$user_random/ 2> /dev/null
-cp *.key $user_id$user_random/ 2> /dev/null
-cp *.odt $user_id$user_random/ 2> /dev/null
-cp *.ods $user_id$user_random/ 2> /dev/null
-cp *.odp $user_id$user_random/ 2> /dev/null
-cp *.xml $user_id$user_random/ 2> /dev/null
-cp *.ll $user_id$user_random/ 2> /dev/null
-cp *.csv $user_id$user_random/ 2> /dev/null
-cp *.mm $user_id$user_random/ 2> /dev/null
 cp makefile $user_id$user_random/ 2> /dev/null
 cp MAKEFILE $user_id$user_random/ 2> /dev/null
 cp Makefile $user_id$user_random/ 2> /dev/null
