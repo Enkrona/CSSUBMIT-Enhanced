@@ -257,7 +257,7 @@ cp *.markdown $user_id$user_random/ 2> /dev/null
 cp *.mdown $user_id$user_random/ 2> /dev/null
 cp *.mdwn $user_id$user_random/ 2> /dev/null
 
-tar cfz $user_id.tar.gz $user_id$user_random 1> /dev/null
+tar -cfz $user_id.tar.gz $user_id$user_random 1> /dev/null
 
 ###############################################################################
 # copying the files to the server
