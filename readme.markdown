@@ -22,6 +22,7 @@ Although the compiler of choice on the Missouri S&T campus is the GNU C/C++ comp
   * [Fedora](http://fedoraproject.org/en/get-fedora-options)
   * [openSUSE](http://software.opensuse.org/)
   * [Linux Mint](http://www.linuxmint.com/download.php)
+  * [Debian](http://www.debian.org/distrib/)
 
 * The GNU Compiler Collection
   * [Official Site](http://gcc.gnu.org/releases.html)
