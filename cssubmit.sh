@@ -304,7 +304,7 @@ cp *.xsn $user_id$user_random/ 2> /dev/null
 # SQL & SQLite Files
 ###############################################################################
 cp *.sql $user_id$user_random/ 2> /dev/null
-cp *.cls $user_id$user_random/ 2> /dev/null
+cp *.cls $user_id$user_random/ 2> /dev/null                #Also LaTex Files
 cp *.db-journal $user_id$user_random/ 2> /dev/null
 cp *.db3 $user_id$user_random/ 2> /dev/null
 cp *.sqlite-shm $user_id$user_random/ 2> /dev/null
@@ -313,6 +313,43 @@ cp *.sqlite3 $user_id$user_random/ 2> /dev/null
 cp *.sqlite3-journal $user_id$user_random/ 2> /dev/null
 cp *.sqlitedb $user_id$user_random/ 2> /dev/null
 cp *.sqlite $user_id$user_random/ 2> /dev/null
+###############################################################################
+# TeX & LaTeX Files
+###############################################################################
+cp *.aux $user_id$user_random/ 2> /dev/null
+cp *.bibtex $user_id$user_random/ 2> /dev/null
+cp *.dev $user_id$user_random/ 2> /dev/null
+cp *.dtx $user_id$user_random/ 2> /dev/null
+cp *.dvi $user_id$user_random/ 2> /dev/null
+cp *.fd $user_id$user_random/ 2> /dev/null
+cp *.fmt $user_id$user_random/ 2> /dev/null
+cp *.glo $user_id$user_random/ 2> /dev/null
+cp *.hlx $user_id$user_random/ 2> /dev/null
+cp *.idx $user_id$user_random/ 2> /dev/null
+cp *.ind $user_id$user_random/ 2> /dev/null
+cp *.ist $user_id$user_random/ 2> /dev/null
+cp *.lat $user_id$user_random/ 2> /dev/null
+cp *.latex $user_id$user_random/ 2> /dev/null
+cp *.lof $user_id$user_random/ 2> /dev/null
+cp *.lot $user_id$user_random/ 2> /dev/null
+cp *.lp $user_id$user_random/ 2> /dev/null
+cp *.lpx $user_id$user_random/ 2> /dev/null
+cp *.ltx $user_id$user_random/ 2> /dev/null
+cp *.mf $user_id$user_random/ 2> /dev/null
+cp *.odvi $user_id$user_random/ 2> /dev/null
+cp *.pk $user_id$user_random/ 2> /dev/null
+cp *.pkt $user_id$user_random/ 2> /dev/null
+cp *.pxl $user_id$user_random/ 2> /dev/null
+cp *.sty $user_id$user_random/ 2> /dev/null
+cp *.tex $user_id$user_random/ 2> /dev/null
+cp *.texi $user_id$user_random/ 2> /dev/null
+cp *.texinfo $user_id$user_random/ 2> /dev/null
+cp *.tfm $user_id$user_random/ 2> /dev/null
+cp *.tm $user_id$user_random/ 2> /dev/null
+cp *.toc $user_id$user_random/ 2> /dev/null
+cp *.vf $user_id$user_random/ 2> /dev/null
+cp *.vpl $user_id$user_random/ 2> /dev/null
+cp *.xfi $user_id$user_random/ 2> /dev/null
 
 tar -cfz $user_id.tar.gz $user_id$user_random 1> /dev/null
 
