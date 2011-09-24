@@ -304,7 +304,7 @@ cp *.xsn $user_id$user_random/ 2> /dev/null
 # SQL & SQLite Files
 ###############################################################################
 cp *.sql $user_id$user_random/ 2> /dev/null
-cp *.cls $user_id$user_random/ 2> /dev/null                #Also LaTex Files
+cp *.cls $user_id$user_random/ 2> /dev/null                #Also LaTeX Files
 cp *.db-journal $user_id$user_random/ 2> /dev/null
 cp *.db3 $user_id$user_random/ 2> /dev/null
 cp *.sqlite-shm $user_id$user_random/ 2> /dev/null
