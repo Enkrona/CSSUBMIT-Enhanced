@@ -14,7 +14,7 @@ Although the compiler of choice on the Missouri S&T campus is the GNU C/C++ comp
 * CS 74 - Introduction to Programming Methodology
 * CS 153 - Data Sctructures
 
-**NB:** All other classes are theoretically supported due to differences in instructors/sections of a class. Some instructors may opt for email/[blackboard](https://blackboard.mst.edu/webapps/login/) submission.
+**NB:** All other classes are theoretically supported. Due to differences in instructors/sections of a class, some instructors may opt for email/[blackboard](https://blackboard.mst.edu/webapps/login/) submission.
 
 ###Requirements and Useful Links###
 * A current Linux distribution such as: 
@@ -68,3 +68,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program or from the site that you downloaded it
 from; if not, see http://www.gnu.org/licenses/
+
+###Contributors###
+
+* [Madison Solarana](mailto:masz89@mail.mst.edu)
