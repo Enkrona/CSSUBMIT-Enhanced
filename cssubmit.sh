@@ -28,7 +28,7 @@ if [ $1 -eq 53 ]; then
 		script -c "clang++ -O3 -Wall -W -pedantic-errors *.cpp -o driver"$user_random -q
 	elif [ $compilerchoice -eq 3 ]; then
 		echo -e "\033[35m >>>>> Submit will now attempt to compile your program files.\033[0m"
-		script -c "icc -O3 -Werror-all *.cpp -o driver"$user_random -q
+		script -c "icpc -O3 -Wall -Werror *.cpp -o driver"$user_random -q
 	else
 		echo -e "\033[31m >>>>> Submit was unable to compile your program.\033[0m"
 		echo -e "\033[31m >>>>> Make sure to pick a valid input(1 - 3).\033[0m"
@@ -47,10 +47,10 @@ elif [ $1 -eq 73 ]; then
 	echo -e "\\033[35m > \\033[0m\c" && read compilerchoice
 	if [ $compilerchoice -eq 1 ]; then
 		echo -e "\033[35m >>>>> Submit will now attempt to compile your program files.\033[0m"
-		script -c "gfortran *.f90 -o driver"$user_random -q
+		script -c "gfortran -O2 -Wall -pedantic-errors -Werror *.f90 -o driver"$user_random -q
 	elif [ $compilerchoice -eq 2 ]; then
 		echo -e "\033[35m >>>>> Submit will now attempt to compile your program files.\033[0m"
-		script -c "ifort *.f90 -o driver"$user_random -q
+		script -c "ifort -O2 -warn all -warn errors *.f90 -o driver"$user_random -q
 	else
 		echo -e "\033[31m >>>>> Submit was unable to compile your program.\033[0m"
 		echo -e "\033[31m >>>>> Make sure to pick a valid input(1 - 3).\033[0m"
@@ -75,7 +75,7 @@ elif [ $1 -eq 74 ]; then
 		script -c "clang++ -O3 -Wall -W -pedantic-errors *.cpp -o driver"$user_random -q
 	elif [ $compilerchoice -eq 3 ]; then
 		echo -e "\033[35m >>>>> Submit will now attempt to compile your program files.\033[0m"
-		script -c "icc -O3 -Werror-all *.cpp -o driver"$user_random -q
+		script -c "icpc -O3 -Wall -Werror *.cpp -o driver"$user_random -q
 	else
 		echo -e "\033[31m >>>>> Submit was unable to compile your program.\033[0m"
 		echo -e "\033[31m >>>>> Make sure to pick a valid input(1 - 3).\033[0m"
@@ -100,7 +100,7 @@ elif [ $1 -eq 153 ]; then
 		script -c "clang++ -O3 -Wall -W -pedantic-errors *.cpp -I/usr/local/include -L/usr/local/lib -lcppunit -ldl -o driver"$user_random -q
 	elif [ $compilerchoice -eq 3 ]; then
 		echo -e "\033[35m >>>>> Submit will now attempt to compile your program files.\033[0m"
-		script -c "icc -O3 -Werror-all *.cpp -I/usr/local/include -L/usr/local/lib -lcppunit -ldl -o driver"$user_random -q
+		script -c "icpc -O3 -Wall -Werror *.cpp -I/usr/local/include -L/usr/local/lib -lcppunit -ldl -o driver"$user_random -q
 	else
 		echo -e "\033[31m >>>>> Submit was unable to compile your program.\033[0m"
 		echo -e "\033[31m >>>>> Make sure to pick a valid input(1 - 3).\033[0m"
