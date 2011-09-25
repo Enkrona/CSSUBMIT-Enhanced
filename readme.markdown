@@ -27,7 +27,7 @@ Although the compiler of choice on the Missouri S&T campus is the GNU C/C++ comp
 * The GNU Compiler Collection
   * [Official Site](http://gcc.gnu.org/releases.html)
   * [Official Documentation](http://gcc.gnu.org/onlinedocs/)
-  * Linux Distribution package manager: yum, apt, etc.
+  * Linux: Use the built in package manager/developer tools to obtain preconfigured binaries.
 
 * The Intel C++ Compiler and Fortran Compiler
   * [Official Site(C++)](http://bit.ly/pZRphI)
@@ -38,17 +38,17 @@ Although the compiler of choice on the Missouri S&T campus is the GNU C/C++ comp
 * Clang-LLVM
   * [Official Site](http://llvm.org/releases/)
   * [Official Documentation](http://llvm.org/docs/)
-  * Linux Distribution package manager: yum, apt, etc.
+  * Linux: Use the built in package manager/developer tools to obtain preconfigured binaries.
 
 * Valgrind
   * [Official Site](http://valgrind.org/downloads/current.html)
   * [Official Documentation](http://valgrind.org/docs/manual/manual.html)
-  * Linux Distribution package manager: yum, apt, etc.
+  * Linux: Use the built in package manager/developer tools to obtain preconfigured binaries.
 
 * CPPUNIT
   * [Official Site](http://sourceforge.net/projects/cppunit/)
   * [Official Documentation](http://sourceforge.net/apps/mediawiki/cppunit/index.php)
-  * Linux Distribution package manager: yum, apt, etc.
+  * Linux: Use the built in package manager/developer tools to obtain preconfigured binaries.
 
 ###Installation###
 For multiple users, it is recommended that the script is placed in /usr/local/bin and have the .sh extension removed. Once it is in place, give the script the proper file permissions(`chmod 755 cssubmit`) and it is ready for use.
