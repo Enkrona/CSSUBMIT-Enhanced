@@ -5,10 +5,10 @@ clear
 ###############################################################################
 if [ $# -ne 3 ]; then
     echo "Usage: cssubmit course number section letter assignment number"
-	echo "For example the command: cssubmit 53 a 3"
-	echo "would be for the third assignment in CS53 Section A"
-	echo "and for example the command: cssubmit 74 c 9"
-	echo "would be for the ninth assignment in CS74 Section C"
+    echo "For example the command: cssubmit 53 a 3"
+    echo "would be for the third assignment in CS53 Section A"
+    echo "and for example the command: cssubmit 74 c 9"
+    echo "would be for the ninth assignment in CS74 Section C"
     exit 1
 fi
 
@@ -71,7 +71,7 @@ if [ $1 -eq 53 ]; then
 	fi
 	
 	if [ -f driver$user_random ]; then
-	     echo -e "\033[32m >>>>> Submit was successfully able to compile your program.\033[0m"
+                echo -e "\033[32m >>>>> Submit was successfully able to compile your program.\033[0m"
 		echo -e "\033[35m >>>>> Submit will now attempt to execute your program.\033[0m"
 		script -c "./driver"$user_random -q -a
 	else
@@ -96,7 +96,7 @@ elif [ $1 -eq 73 ]; then
 	fi
 	
 	if [ -f driver$user_random ]; then
-     	echo -e "\033[32m >>>>> Submit was successfully able to compile your program.\033[0m"
+                echo -e "\033[32m >>>>> Submit was successfully able to compile your program.\033[0m"
 		echo -e "\033[35m >>>>> Submit will now attempt to execute your program.\033[0m"
 		script -c "./driver"$user_random -q -a
 	else
@@ -124,7 +124,7 @@ elif [ $1 -eq 74 ]; then
 	fi
 	
 	if [ -f driver$user_random ]; then
-     	echo -e "\033[32m >>>>> Submit was successfully able to compile your program.\033[0m"
+     	        echo -e "\033[32m >>>>> Submit was successfully able to compile your program.\033[0m"
 		echo -e "\033[35m >>>>> Submit will now attempt to execute your program.\033[0m"
 		script -c "./driver"$user_random -q -a
 	else
@@ -152,7 +152,7 @@ elif [ $1 -eq 153 ]; then
 	fi
 	
 	if [ -f driver$user_random ]; then
-     	echo -e "\033[32m >>>>> Submit was successfully able to compile your program.\033[0m"
+     	        echo -e "\033[32m >>>>> Submit was successfully able to compile your program.\033[0m"
 		echo -e "\033[35m >>>>> Submit will now attempt to execute your program.\033[0m"
 		script -c "valgrind ./driver"$user_random -q -a
 	else
