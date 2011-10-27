@@ -3,8 +3,7 @@ clear
 ###############################################################################
 # check to see if the command was called correctly
 ###############################################################################
-if [ $# -ne 3 ]
-then
+if [ $# -ne 3 ]; then
     echo "Usage: cssubmit course number section letter assignment number"
 	echo "For example the command: cssubmit 53 a 3"
 	echo "would be for the third assignment in CS53 Section A"
@@ -15,15 +14,13 @@ fi
 
 course=$(echo "$1" | grep -E "^[[:digit:]]+$")
 
-if [ $(echo ${#course}) -lt 1 ]
-then
+if [ $(echo ${#course}) -lt 1 ]; then
   echo "The course number you have entered is not in the proper format"
   echo "Please re-execute cssubmit with a valid course number"
   exit 1
 fi
 
-if [ $1 -lt 1 -o $1 -gt 499 ]
-then
+if [ $1 -lt 1 -o $1 -gt 499 ]; then
   echo "The course number you have entered is outside the CS Course Catalog"
   echo "This could be because the course number entered is too small or too large"
   echo "Please re-exectue cssubmit with a valid course number"
@@ -32,8 +29,7 @@ fi
 
 section=$(echo "$2" | grep -E "^[[:alpha:]]+$")
 
-if [ $(echo ${#section}) -gt 1 -o $(echo ${#section}) -lt 1 ]
-then
+if [ $(echo ${#section}) -gt 1 -o $(echo ${#section}) -lt 1 ]; then
  echo "The section letter you have entered is not in the proper format"
  echo "Sections are defined as a single letter: a-z or A-Z"
  echo "Please re-execute cssubmit with a valid section letter"
@@ -42,10 +38,10 @@ fi
 
 assignment=$(echo "$3" | grep -E "^[[:digit:]]+$")
 
-if [ $(echo ${#assignment}) -lt 1 ]
-then
+if [ $(echo ${#assignment}) -lt 1 ]; then
   echo "The assignment number you have entered is not in the proper format"
-  echo "Please re-execute cssubmit with a valid section letter"
+  echo "Assignments are defined as numbers: 0, 1, 2, etc."
+  echo "Please re-execute cssubmit with a valid assignment number"
   exit 1
 fi
 
