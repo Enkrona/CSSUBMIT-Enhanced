@@ -27,11 +27,11 @@ if [ $1 -lt 1 -o $1 -gt 499 ]; then
   exit 1
 fi
 
-section=$(echo "$2" | grep -E "^[[:alpha:]]+$")
+section=$(echo "$2" | grep -E "^[[:lower:]]+$")
 
 if [ $(echo ${#section}) -gt 1 -o $(echo ${#section}) -lt 1 ]; then
  echo "The section letter you have entered is not in the proper format"
- echo "Sections are defined as a single letter: a-z or A-Z"
+ echo "Sections are defined as a single letter(lower case): a-z"
  echo "Please re-execute cssubmit with a valid section letter"
  exit 1
 fi
