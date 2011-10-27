@@ -5,12 +5,48 @@ clear
 ###############################################################################
 if [ $# -ne 3 ]
 then
-    echo "Usage - cssubmit course-number section-letter assignment-number"
-	echo "for example the command: cssubmit 53 a 3"
+    echo "Usage: cssubmit course number section letter assignment number"
+	echo "For example the command: cssubmit 53 a 3"
 	echo "would be for the third assignment in CS53 Section A"
 	echo "and for example the command: cssubmit 74 c 9"
 	echo "would be for the ninth assignment in CS74 Section C"
     exit 1
+fi
+
+course=$(echo "$1" | grep -E "^[[:digit:]]+$")
+
+if [ $(echo ${#course}) -lt 1 ]
+then
+  echo "The course number you have entered is not in the proper format"
+  echo "Please re-execute cssubmit with a valid course number"
+  exit 1
+fi
+
+if [ $1 -lt 1 -o $1 -gt 499 ]
+then
+  echo "The course number you have entered is outside the CS Course Catalog"
+  echo "This could be because the course number entered is too small or too large"
+  echo "Please re-exectue cssubmit with a valid course number"
+  exit 1
+fi
+
+section=$(echo "$2" | grep -E "^[[:alpha:]]+$")
+
+if [ $(echo ${#section}) -gt 1 -o $(echo ${#section}) -lt 1 ]
+then
+ echo "The section letter you have entered is not in the proper format"
+ echo "Sections are defined as a single letter: a-z or A-Z"
+ echo "Please re-execute cssubmit with a valid section letter"
+ exit 1
+fi
+
+assignment=$(echo "$3" | grep -E "^[[:digit:]]+$")
+
+if [ $(echo ${#assignment}) -lt 1 ]
+then
+  echo "The assignment number you have entered is not in the proper format"
+  echo "Please re-execute cssubmit with a valid section letter"
+  exit 1
 fi
 
 ###############################################################################
@@ -32,11 +68,12 @@ if [ $1 -eq 53 ]; then
 	else
 		echo -e "\033[31m >>>>> Submit was unable to compile your program.\033[0m"
 		echo -e "\033[31m >>>>> Make sure to pick a valid input(1 - 3).\033[0m"
-		echo -e "\033[31m >>>>> Bailing out!\033[0m"
+		echo -e "\033[31m >>>>> Bailing out...\033[0m"
 		exit 1
 	fi
 	
 	if [ -f driver$user_random ]; then
+	     echo -e "\033[32m >>>>> Submit was successfully able to compile your program.\033[0m"
 		echo -e "\033[35m >>>>> Submit will now attempt to execute your program.\033[0m"
 		script -c "./driver"$user_random -q -a
 	else
@@ -54,11 +91,12 @@ elif [ $1 -eq 73 ]; then
 	else
 		echo -e "\033[31m >>>>> Submit was unable to compile your program.\033[0m"
 		echo -e "\033[31m >>>>> Make sure to pick a valid input(1 - 3).\033[0m"
-		echo -e "\033[31m >>>>> Bailing out!\033[0m"
+		echo -e "\033[31m >>>>> Bailing out...\033[0m"
 		exit 1
 	fi
 	
 	if [ -f driver$user_random ]; then
+     	echo -e "\033[32m >>>>> Submit was successfully able to compile your program.\033[0m"
 		echo -e "\033[35m >>>>> Submit will now attempt to execute your program.\033[0m"
 		script -c "./driver"$user_random -q -a
 	else
@@ -79,11 +117,12 @@ elif [ $1 -eq 74 ]; then
 	else
 		echo -e "\033[31m >>>>> Submit was unable to compile your program.\033[0m"
 		echo -e "\033[31m >>>>> Make sure to pick a valid input(1 - 3).\033[0m"
-		echo -e "\033[31m >>>>> Bailing out!\033[0m"
+		echo -e "\033[31m >>>>> Bailing out...\033[0m"
 		exit 1
 	fi
 	
 	if [ -f driver$user_random ]; then
+     	echo -e "\033[32m >>>>> Submit was successfully able to compile your program.\033[0m"
 		echo -e "\033[35m >>>>> Submit will now attempt to execute your program.\033[0m"
 		script -c "./driver"$user_random -q -a
 	else
@@ -104,11 +143,12 @@ elif [ $1 -eq 153 ]; then
 	else
 		echo -e "\033[31m >>>>> Submit was unable to compile your program.\033[0m"
 		echo -e "\033[31m >>>>> Make sure to pick a valid input(1 - 3).\033[0m"
-		echo -e "\033[31m >>>>> Bailing out!\033[0m"
+		echo -e "\033[31m >>>>> Bailing out...\033[0m"
 		exit 1
 	fi
 	
 	if [ -f driver$user_random ]; then
+     	echo -e "\033[32m >>>>> Submit was successfully able to compile your program.\033[0m"
 		echo -e "\033[35m >>>>> Submit will now attempt to execute your program.\033[0m"
 		script -c "valgrind ./driver"$user_random -q -a
 	else
