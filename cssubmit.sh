@@ -56,6 +56,13 @@ user_random=$RANDOM
 if [ $1 -eq 53 ]; then 
 	echo -e "\\033[35m >>>>> Choose a compiler(#): (1) - GNU GCC, (2) - Clang-LLVM, (3) - Intel ICC\\033[0m"
 	echo -e "\\033[35m > \\033[0m\c" && read compilerchoice
+	compiler=$(echo "$compilerchoice" | grep -E "^[1-3]+$")
+	if [ $(echo ${#compiler}) -gt 1 -o $(echo ${#compiler}) -lt 1 ]; then
+	  echo -e "\033[31m >>>>> Submit was unable to compile your program.\033[0m"
+	  echo -e "\033[31m >>>>> Make sure to pick a valid input(1 - 3).\033[0m"
+	  echo -e "\033[31m >>>>> Bailing out...\033[0m"
+	  exit 1
+	fi
 	if [ $compilerchoice -eq 1 ]; then
 		echo -e "\033[35m >>>>> Submit will now attempt to compile your program files.\033[0m"
 		script -c "g++ -O3 -Wall -W -pedantic-errors *.cpp -o driver"$user_random -q
@@ -65,11 +72,6 @@ if [ $1 -eq 53 ]; then
 	elif [ $compilerchoice -eq 3 ]; then
 		echo -e "\033[35m >>>>> Submit will now attempt to compile your program files.\033[0m"
 		script -c "icpc -O3 -Wall -Werror *.cpp -o driver"$user_random -q
-	else
-		echo -e "\033[31m >>>>> Submit was unable to compile your program.\033[0m"
-		echo -e "\033[31m >>>>> Make sure to pick a valid input(1 - 3).\033[0m"
-		echo -e "\033[31m >>>>> Bailing out...\033[0m"
-		exit 1
 	fi
 	
 	if [ -f driver$user_random ]; then
@@ -82,17 +84,19 @@ if [ $1 -eq 53 ]; then
 elif [ $1 -eq 73 ]; then
 	echo -e "\\033[35m >>>>> Choose a compiler(#): (1) - GNU GFortran, (2) - Intel iFort\\033[0m"
 	echo -e "\\033[35m > \\033[0m\c" && read compilerchoice
+	compiler=$(echo "$compilerchoice" | grep -E "^[1-2]+$")
+	if [ $(echo ${#compiler}) -gt 1 -o $(echo ${#compiler}) -lt 1 ]; then
+	  echo -e "\033[31m >>>>> Submit was unable to compile your program.\033[0m"
+	  echo -e "\033[31m >>>>> Make sure to pick a valid input(1 - 3).\033[0m"
+	  echo -e "\033[31m >>>>> Bailing out...\033[0m"
+	  exit 1
+	fi
 	if [ $compilerchoice -eq 1 ]; then
 		echo -e "\033[35m >>>>> Submit will now attempt to compile your program files.\033[0m"
 		script -c "gfortran -O2 -Wall -pedantic-errors -Werror *.f90 -o driver"$user_random -q
 	elif [ $compilerchoice -eq 2 ]; then
 		echo -e "\033[35m >>>>> Submit will now attempt to compile your program files.\033[0m"
 		script -c "ifort -O2 -warn all -warn errors *.f90 -o driver"$user_random -q
-	else
-		echo -e "\033[31m >>>>> Submit was unable to compile your program.\033[0m"
-		echo -e "\033[31m >>>>> Make sure to pick a valid input(1 - 3).\033[0m"
-		echo -e "\033[31m >>>>> Bailing out...\033[0m"
-		exit 1
 	fi
 	
 	if [ -f driver$user_random ]; then
@@ -105,6 +109,13 @@ elif [ $1 -eq 73 ]; then
 elif [ $1 -eq 74 ]; then
 	echo -e "\\033[35m >>>>> Choose a compiler(#): (1) - GNU GCC, (2) - Clang-LLVM, (3) - Intel ICC\\033[0m"
 	echo -e "\\033[35m > \\033[0m\c" && read compilerchoice
+	compiler=$(echo "$compilerchoice" | grep -E "^[1-3]+$")
+	if [ $(echo ${#compiler}) -gt 1 -o $(echo ${#compiler}) -lt 1 ]; then
+	  echo -e "\033[31m >>>>> Submit was unable to compile your program.\033[0m"
+	  echo -e "\033[31m >>>>> Make sure to pick a valid input(1 - 3).\033[0m"
+	  echo -e "\033[31m >>>>> Bailing out...\033[0m"
+	  exit 1
+	fi
 	if [ $compilerchoice -eq 1 ]; then
 		echo -e "\033[35m >>>>> Submit will now attempt to compile your program files.\033[0m"
 		script -c "g++ -O3 -Wall -W -pedantic-errors *.cpp -o driver"$user_random -q
@@ -114,11 +125,6 @@ elif [ $1 -eq 74 ]; then
 	elif [ $compilerchoice -eq 3 ]; then
 		echo -e "\033[35m >>>>> Submit will now attempt to compile your program files.\033[0m"
 		script -c "icpc -O3 -Wall -Werror *.cpp -o driver"$user_random -q
-	else
-		echo -e "\033[31m >>>>> Submit was unable to compile your program.\033[0m"
-		echo -e "\033[31m >>>>> Make sure to pick a valid input(1 - 3).\033[0m"
-		echo -e "\033[31m >>>>> Bailing out...\033[0m"
-		exit 1
 	fi
 	
 	if [ -f driver$user_random ]; then
@@ -131,6 +137,13 @@ elif [ $1 -eq 74 ]; then
 elif [ $1 -eq 153 ]; then
 	echo -e "\\033[35m >>>>> Choose a compiler(#): (1) - GNU GCC, (2) - Clang-LLVM, (3) - Intel ICC\\033[0m"
 	echo -e "\\033[35m > \\033[0m\c" && read compilerchoice
+	compiler=$(echo "$compilerchoice" | grep -E "^[1-3]+$")
+	if [ $(echo ${#compiler}) -gt 1 -o $(echo ${#compiler}) -lt 1 ]; then
+	  echo -e "\033[31m >>>>> Submit was unable to compile your program.\033[0m"
+	  echo -e "\033[31m >>>>> Make sure to pick a valid input(1 - 3).\033[0m"
+	  echo -e "\033[31m >>>>> Bailing out...\033[0m"
+	  exit 1
+	fi
 	if [ $compilerchoice -eq 1 ]; then
 		echo -e "\033[35m >>>>> Submit will now attempt to compile your program files.\033[0m"
 		script -c "g++ -O3 -Wall -W -pedantic-errors *.cpp -I/usr/local/include -L/usr/local/lib -lcppunit -ldl -o driver"$user_random -q
@@ -140,11 +153,6 @@ elif [ $1 -eq 153 ]; then
 	elif [ $compilerchoice -eq 3 ]; then
 		echo -e "\033[35m >>>>> Submit will now attempt to compile your program files.\033[0m"
 		script -c "icpc -O3 -Wall -Werror *.cpp -I/usr/local/include -L/usr/local/lib -lcppunit -ldl -o driver"$user_random -q
-	else
-		echo -e "\033[31m >>>>> Submit was unable to compile your program.\033[0m"
-		echo -e "\033[31m >>>>> Make sure to pick a valid input(1 - 3).\033[0m"
-		echo -e "\033[31m >>>>> Bailing out...\033[0m"
-		exit 1
 	fi
 	
 	if [ -f driver$user_random ]; then
