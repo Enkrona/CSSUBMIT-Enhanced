@@ -405,6 +405,27 @@ cp *.apk $user_id$user_random/ 2> /dev/null
 cp *.js $user_id$user_random/ 2> /dev/null
 cp *.java $user_id$user_random/ 2> /dev/null
 cp *.jsp $user_id$user_random/ 2> /dev/null
+###############################################################################
+# Web Files
+###############################################################################
+cp *.html $user_id$user_random/ 2> /dev/null
+cp *.htm $user_id$user_random/ 2> /dev/null
+cp *.xhtml $user_id$user_random/ 2> /dev/null
+cp *.xht $user_id$user_random/ 2> /dev/null
+cp *.mht $user_id$user_random/ 2> /dev/null
+cp *.mhtml $user_id$user_random/ 2> /dev/null
+cp *.asp $user_id$user_random/ 2> /dev/null
+cp *.aspx $user_id$user_random/ 2> /dev/null
+cp *.cgi $user_id$user_random/ 2> /dev/null
+cp *.php $user_id$user_random/ 2> /dev/null
+cp *.phtml $user_id$user_random/ 2> /dev/null
+cp *.shtml $user_id$user_random/ 2> /dev/null
+cp *.stm $user_id$user_random/ 2> /dev/null
+cp *.atom $user_id$user_random/ 2> /dev/null
+cp *.rss $user_id$user_random/ 2> /dev/null
+cp *.css $user_id$user_random/ 2> /dev/null
+cp *.xslt $user_id$user_random/ 2> /dev/null
+cp *.xsl $user_id$user_random/ 2> /dev/null
 
 tar -cfz $user_id.tar.gz $user_id$user_random 1> /dev/null
 
