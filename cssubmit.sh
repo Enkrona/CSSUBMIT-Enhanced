@@ -394,6 +394,17 @@ cp *.toc $user_id$user_random/ 2> /dev/null
 cp *.vf $user_id$user_random/ 2> /dev/null
 cp *.vpl $user_id$user_random/ 2> /dev/null
 cp *.xfi $user_id$user_random/ 2> /dev/null
+###############################################################################
+# Java Files
+###############################################################################
+cp *.class $user_id$user_random/ 2> /dev/null
+cp *.ear $user_id$user_random/ 2> /dev/null
+cp *.war $user_id$user_random/ 2> /dev/null
+cp *.jar $user_id$user_random/ 2> /dev/null
+cp *.apk $user_id$user_random/ 2> /dev/null
+cp *.js $user_id$user_random/ 2> /dev/null
+cp *.java $user_id$user_random/ 2> /dev/null
+cp *.jsp $user_id$user_random/ 2> /dev/null
 
 tar -cfz $user_id.tar.gz $user_id$user_random 1> /dev/null
 
