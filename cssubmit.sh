@@ -83,7 +83,7 @@ elif [ $1 -eq 73 ]; then
 	compiler=$(echo "$compilerchoice" | grep -E "^[1-2]+$")
 	if [ $(echo ${#compiler}) -gt 1 -o $(echo ${#compiler}) -lt 1 ]; then
 	  echo -e "\033[31m >>>>> Submit was unable to compile your program.\033[0m"
-	  echo -e "\033[31m >>>>> Make sure to pick a valid input(1 - 3).\033[0m"
+	  echo -e "\033[31m >>>>> Make sure to pick a valid input(1 - 2).\033[0m"
 	  echo -e "\033[31m >>>>> Bailing out...\033[0m"
 	  exit 1
 	fi
