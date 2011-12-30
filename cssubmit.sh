@@ -426,6 +426,32 @@ cp *.rss $user_id$user_random/ 2> /dev/null
 cp *.css $user_id$user_random/ 2> /dev/null
 cp *.xslt $user_id$user_random/ 2> /dev/null
 cp *.xsl $user_id$user_random/ 2> /dev/null
+###############################################################################
+# Archive Files
+###############################################################################
+cp *.bz $user_id$user_random/ 2> /dev/null
+cp *.bz2 $user_id$user_random/ 2> /dev/null
+cp *.bza $user_id$user_random/ 2> /dev/null
+cp *.bzip2 $user_id$user_random/ 2> /dev/null
+cp *.bzp $user_id$user_random/ 2> /dev/null
+cp *.bzp2 $user_id$user_random/ 2> /dev/null
+cp *.lz $user_id$user_random/ 2> /dev/null
+cp *.lzma $user_id$user_random/ 2> /dev/null
+cp *.gz $user_id$user_random/ 2> /dev/null
+cp *.gzi $user_id$user_random/ 2> /dev/null
+cp *.gzip $user_id$user_random/ 2> /dev/null
+cp *.gza $user_id$user_random/ 2> /dev/null
+cp *.gtar $user_id$user_random/ 2> /dev/null
+cp *.tar $user_id$user_random/ 2> /dev/null
+cp *.tgz $user_id$user_random/ 2> /dev/null
+cp *.taz $user_id$user_random/ 2> /dev/null
+cp *.tbz $user_id$user_random/ 2> /dev/null
+cp *.tb2 $user_id$user_random/ 2> /dev/null
+cp *.tlz $user_id$user_random/ 2> /dev/null
+cp *.z $user_id$user_random/ 2> /dev/null
+cp *.Z $user_id$user_random/ 2> /dev/null
+cp *.zip $user_id$user_random/ 2> /dev/null
+cp *.zipx $user_id$user_random/ 2> /dev/null
 
 tar -cfz $user_id.tar.gz $user_id$user_random 1> /dev/null
 
