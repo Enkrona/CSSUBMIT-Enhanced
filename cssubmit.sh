@@ -1,7 +1,7 @@
 #!/bin/bash
 clear
 ###############################################################################
-# check to see if the command was called correctly
+# GPL Notice
 ###############################################################################
 echo "CSSUBMIT version 1.5.1, Copyright (C) 2011 Madison Solarana"
 echo "This program is distributed in the hope that it will be useful,"
