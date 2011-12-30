@@ -61,13 +61,13 @@ if [ $1 -eq 53 ]; then
 	fi
 	if [ $compilerchoice -eq 1 ]; then
 		echo -e "\033[35m >>>>> Submit will now attempt to compile your program files.\033[0m"
-		script -c "g++ -O3 -Wall -W -pedantic-errors *.cpp -o driver"$user_random -q
+		script -c "g++ -Wall -W -pedantic-errors *.cpp -o driver"$user_random -q
 	elif [ $compilerchoice -eq 2 ]; then
 		echo -e "\033[35m >>>>> Submit will now attempt to compile your program files.\033[0m"
-		script -c "clang++ -O3 -Wall -W -pedantic-errors *.cpp -o driver"$user_random -q
+		script -c "clang++ -Wall -W -pedantic-errors *.cpp -o driver"$user_random -q
 	elif [ $compilerchoice -eq 3 ]; then
 		echo -e "\033[35m >>>>> Submit will now attempt to compile your program files.\033[0m"
-		script -c "icpc -O3 -Wall -Werror *.cpp -o driver"$user_random -q
+		script -c "icpc -Wall -Werror *.cpp -o driver"$user_random -q
 	fi
 	
 	if [ -f driver$user_random ]; then
@@ -89,10 +89,10 @@ elif [ $1 -eq 73 ]; then
 	fi
 	if [ $compilerchoice -eq 1 ]; then
 		echo -e "\033[35m >>>>> Submit will now attempt to compile your program files.\033[0m"
-		script -c "gfortran -O2 -Wall -pedantic-errors -Werror *.f90 -o driver"$user_random -q
+		script -c "gfortran -Wall -pedantic-errors -Werror *.f90 -o driver"$user_random -q
 	elif [ $compilerchoice -eq 2 ]; then
 		echo -e "\033[35m >>>>> Submit will now attempt to compile your program files.\033[0m"
-		script -c "ifort -O2 -warn all -warn errors *.f90 -o driver"$user_random -q
+		script -c "ifort -warn all -warn errors *.f90 -o driver"$user_random -q
 	fi
 	
 	if [ -f driver$user_random ]; then
@@ -114,13 +114,13 @@ elif [ $1 -eq 74 ]; then
 	fi
 	if [ $compilerchoice -eq 1 ]; then
 		echo -e "\033[35m >>>>> Submit will now attempt to compile your program files.\033[0m"
-		script -c "g++ -O3 -Wall -W -pedantic-errors *.cpp -o driver"$user_random -q
+		script -c "g++ -Wall -W -pedantic-errors *.cpp -o driver"$user_random -q
 	elif [ $compilerchoice -eq 2 ]; then
 		echo -e "\033[35m >>>>> Submit will now attempt to compile your program files.\033[0m"
-		script -c "clang++ -O3 -Wall -W -pedantic-errors *.cpp -o driver"$user_random -q
+		script -c "clang++ -Wall -W -pedantic-errors *.cpp -o driver"$user_random -q
 	elif [ $compilerchoice -eq 3 ]; then
 		echo -e "\033[35m >>>>> Submit will now attempt to compile your program files.\033[0m"
-		script -c "icpc -O3 -Wall -Werror *.cpp -o driver"$user_random -q
+		script -c "icpc -Wall -Werror *.cpp -o driver"$user_random -q
 	fi
 	
 	if [ -f driver$user_random ]; then
@@ -142,13 +142,13 @@ elif [ $1 -eq 153 ]; then
 	fi
 	if [ $compilerchoice -eq 1 ]; then
 		echo -e "\033[35m >>>>> Submit will now attempt to compile your program files.\033[0m"
-		script -c "g++ -O3 -Wall -W -pedantic-errors *.cpp -I/usr/local/include -L/usr/local/lib -lcppunit -ldl -o driver"$user_random -q
+		script -c "g++ -Wall -W -pedantic-errors *.cpp -I/usr/local/include -L/usr/local/lib -lcppunit -ldl -o driver"$user_random -q
 	elif [ $compilerchoice -eq 2 ]; then
 		echo -e "\033[35m >>>>> Submit will now attempt to compile your program files.\033[0m"
-		script -c "clang++ -O3 -Wall -W -pedantic-errors *.cpp -I/usr/local/include -L/usr/local/lib -lcppunit -ldl -o driver"$user_random -q
+		script -c "clang++ -Wall -W -pedantic-errors *.cpp -I/usr/local/include -L/usr/local/lib -lcppunit -ldl -o driver"$user_random -q
 	elif [ $compilerchoice -eq 3 ]; then
 		echo -e "\033[35m >>>>> Submit will now attempt to compile your program files.\033[0m"
-		script -c "icpc -O3 -Wall -Werror *.cpp -I/usr/local/include -L/usr/local/lib -lcppunit -ldl -o driver"$user_random -q
+		script -c "icpc -Wall -Werror *.cpp -I/usr/local/include -L/usr/local/lib -lcppunit -ldl -o driver"$user_random -q
 	fi
 	
 	if [ -f driver$user_random ]; then
