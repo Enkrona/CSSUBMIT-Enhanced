@@ -3,6 +3,23 @@ clear
 ###############################################################################
 # check to see if the command was called correctly
 ###############################################################################
+echo "CSSUBMIT version 1.5.1, Copyright (C) 2011 Madison Solarana"
+echo "This program is distributed in the hope that it will be useful,"
+echo "but WITHOUT ANY WARRANTY; without even the implied warranty of"
+echo "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE."
+echo "See the GNU General Public License v2 for more details."
+###############################################################################
+# check to see if the command was called correctly
+###############################################################################
+if [ $1 == "-h" -o $1 == "--help" ]; then
+  echo "Usage: cssubmit course number section letter assignment number"
+  echo "For example the command: cssubmit 53 a 3"
+  echo "would be for the third assignment in CS53 Section A"
+  echo "and for example the command: cssubmit 74 c 9"
+  echo "would be for the ninth assignment in CS74 Section C"
+  exit 0;
+fi
+
 if [ $# -ne 3 ]; then
     echo "Usage: cssubmit course number section letter assignment number"
     echo "For example the command: cssubmit 53 a 3"
@@ -294,7 +311,6 @@ cp *.pdf $user_id$user_random/ 2> /dev/null
 cp *.pages $user_id$user_random/ 2> /dev/null
 cp *.numbers $user_id$user_random/ 2> /dev/null
 cp *.key $user_id$user_random/ 2> /dev/null
-cp *.keynote $user_id$user_random/ 2> /dev/null
 cp *.odt $user_id$user_random/ 2> /dev/null
 cp *.ott $user_id$user_random/ 2> /dev/null
 cp *.ods $user_id$user_random/ 2> /dev/null
