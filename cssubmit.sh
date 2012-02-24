@@ -323,6 +323,7 @@ cp *.l $user_id$user_random/ 2> /dev/null                  #Also Lisp Files
 cp *.ll $user_id$user_random/ 2> /dev/null
 cp *.lex $user_id$user_random/ 2> /dev/null
 cp *.y $user_id$user_random/ 2> /dev/null
+cp *.yy $user_id$user_random/ 2> /dev/null
 cp *.epub $user_id$user_random/ 2> /dev/null
 cp *.mobi $user_id$user_random/ 2> /dev/null
 cp *.makefile $user_id$user_random/ 2> /dev/null
