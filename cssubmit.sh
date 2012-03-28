@@ -3,7 +3,7 @@ clear
 ###############################################################################
 # GPL Notice
 ###############################################################################
-echo "CSSUBMIT version 1.5.1, Copyright (C) 2011 Madison Solarana"
+echo "CSSUBMIT version 1.6.2, Copyright (C) 2012 Madison Solarana"
 echo "This program is distributed in the hope that it will be useful,"
 echo "but WITHOUT ANY WARRANTY; without even the implied warranty of"
 echo "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE."
@@ -255,18 +255,59 @@ cp *.bash $user_id$user_random/ 2> /dev/null
 cp *.tcsh $user_id$user_random/ 2> /dev/null
 cp *.command $user_id$user_random/ 2> /dev/null
 ###############################################################################
-# PROLOG, Python, & LISP Files
+# Other Languages
 ###############################################################################
 cp *.pl $user_id$user_random/ 2> /dev/null                  #Also Perl Files
 cp *.ph $user_id$user_random/ 2> /dev/null
+cp *.pm $user_id$user_random/ 2> /dev/null
 cp *.pro $user_id$user_random/ 2> /dev/null
 cp *.py $user_id$user_random/ 2> /dev/null
 cp *.pyc $user_id$user_random/ 2> /dev/null
 cp *.pyo $user_id$user_random/ 2> /dev/null
 cp *.pyw $user_id$user_random/ 2> /dev/null
+cp *.pyd $user_id$user_random/ 2> /dev/null
+cp *.python $user_id$user_random/ 2> /dev/null
 cp *.rpy $user_id$user_random/ 2> /dev/null
 cp *.lisp $user_id$user_random/ 2> /dev/null
 cp *.lsp $user_id$user_random/ 2> /dev/null
+cp *.rb $user_id$user_random/ 2> /dev/null
+cp *.rbw $user_id$user_random/ 2> /dev/null
+cp *.rbx $user_id$user_random/ 2> /dev/null
+cp *.ruby $user_id$user_random/ 2> /dev/null
+cp *.go $user_id$user_random/ 2> /dev/null                  #Go (Google)
+cp *.clj $user_id$user_random/ 2> /dev/null
+cp *.ml $user_id$user_random/ 2> /dev/null
+cp *.mli $user_id$user_random/ 2> /dev/null
+cp *.cmi $user_id$user_random/ 2> /dev/null
+cp *.cmo $user_id$user_random/ 2> /dev/null
+cp *.cma $user_id$user_random/ 2> /dev/null
+cp *.cmx $user_id$user_random/ 2> /dev/null
+cp *.cmxa $user_id$user_random/ 2> /dev/null
+cp *.erl $user_id$user_random/ 2> /dev/null
+cp *.yrl $user_id$user_random/ 2> /dev/null
+cp *.hrl $user_id$user_random/ 2> /dev/null
+cp *.rel $user_id$user_random/ 2> /dev/null
+cp *.idl $user_id$user_random/ 2> /dev/null
+cp *.asn1 $user_id$user_random/ 2> /dev/null
+cp *.asn1db $user_id$user_random/ 2> /dev/null
+cp *.mib $user_id$user_random/ 2> /dev/null
+cp *.cs $user_id$user_random/ 2> /dev/null
+cp *.vb $user_id$user_random/ 2> /dev/null
+cp *.vbs $user_id$user_random/ 2> /dev/null
+cp *.jsl $user_id$user_random/ 2> /dev/null
+cp *.cbl $user_id$user_random/ 2> /dev/null
+cp *.cob $user_id$user_random/ 2> /dev/null
+cp *.cpy $user_id$user_random/ 2> /dev/null
+cp *.cobol $user_id$user_random/ 2> /dev/null
+cp *.scala $user_id$user_random/ 2> /dev/null
+cp *.d $user_id$user_random/ 2> /dev/null
+cp *.hs $user_id$user_random/ 2> /dev/null
+cp *.lhs $user_id$user_random/ 2> /dev/null
+cp *.lua $user_id$user_random/ 2> /dev/null
+cp *.groovy $user_id$user_random/ 2> /dev/null
+cp *.gvy $user_id$user_random/ 2> /dev/null
+cp *.gy $user_id$user_random/ 2> /dev/null
+cp *.gsh $user_id$user_random/ 2> /dev/null
 ###############################################################################
 # Text, Data, & Parser Files
 ###############################################################################
@@ -323,6 +364,7 @@ cp *.l $user_id$user_random/ 2> /dev/null                  #Also Lisp Files
 cp *.ll $user_id$user_random/ 2> /dev/null
 cp *.lex $user_id$user_random/ 2> /dev/null
 cp *.y $user_id$user_random/ 2> /dev/null
+cp *.yy $user_id$user_random/ 2> /dev/null
 cp *.epub $user_id$user_random/ 2> /dev/null
 cp *.mobi $user_id$user_random/ 2> /dev/null
 cp *.makefile $user_id$user_random/ 2> /dev/null
@@ -351,6 +393,14 @@ cp *.one $user_id$user_random/ 2> /dev/null
 cp *.onepkg $user_id$user_random/ 2> /dev/null
 cp *.xsf $user_id$user_random/ 2> /dev/null
 cp *.xsn $user_id$user_random/ 2> /dev/null
+cp *.xsd $user_id$user_random/ 2> /dev/null
+cp *.rpt $user_id$user_random/ 2> /dev/null
+cp *.rdlc $user_id$user_random/ 2> /dev/null
+cp *.res $user_id$user_random/ 2> /dev/null
+cp *.resx $user_id$user_random/ 2> /dev/null
+cp *.cd $user_id$user_random/ 2> /dev/null
+cp *.config $user_id$user_random/ 2> /dev/null
+cp *.wsf $user_id$user_random/ 2> /dev/null
 ###############################################################################
 # SQL & SQLite Files
 ###############################################################################
@@ -364,6 +414,7 @@ cp *.sqlite3 $user_id$user_random/ 2> /dev/null
 cp *.sqlite3-journal $user_id$user_random/ 2> /dev/null
 cp *.sqlitedb $user_id$user_random/ 2> /dev/null
 cp *.sqlite $user_id$user_random/ 2> /dev/null
+cp *.mdf $user_id$user_random/ 2> /dev/null
 ###############################################################################
 # TeX & LaTeX Files
 ###############################################################################
@@ -423,6 +474,10 @@ cp *.mht $user_id$user_random/ 2> /dev/null
 cp *.mhtml $user_id$user_random/ 2> /dev/null
 cp *.asp $user_id$user_random/ 2> /dev/null
 cp *.aspx $user_id$user_random/ 2> /dev/null
+cp *.master $user_id$user_random/ 2> /dev/null
+cp *.ascx $user_id$user_random/ 2> /dev/null
+cp *.asax $user_id$user_random/ 2> /dev/null
+cp *.ashx $user_id$user_random/ 2> /dev/null
 cp *.cgi $user_id$user_random/ 2> /dev/null
 cp *.php $user_id$user_random/ 2> /dev/null
 cp *.phtml $user_id$user_random/ 2> /dev/null
@@ -433,6 +488,8 @@ cp *.rss $user_id$user_random/ 2> /dev/null
 cp *.css $user_id$user_random/ 2> /dev/null
 cp *.xslt $user_id$user_random/ 2> /dev/null
 cp *.xsl $user_id$user_random/ 2> /dev/null
+cp *.rhtml $user_id$user_random/ 2> /dev/null
+cp *.sitemap $user_id$user_random/ 2> /dev/null
 ###############################################################################
 # Archive Files
 ###############################################################################
@@ -459,6 +516,11 @@ cp *.z $user_id$user_random/ 2> /dev/null
 cp *.Z $user_id$user_random/ 2> /dev/null
 cp *.zip $user_id$user_random/ 2> /dev/null
 cp *.zipx $user_id$user_random/ 2> /dev/null
+###############################################################################
+# For Funsies: <http://lolcode.com/> LOLCODE is Bejujular 
+###############################################################################
+cp *.lol $user_id$user_random/ 2> /dev/null
+cp *.lols $user_id$user_random/ 2> /dev/null
 
 tar -cfz $user_id.tar.gz $user_id$user_random 1> /dev/null
 
