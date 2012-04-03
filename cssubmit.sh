@@ -3,7 +3,7 @@ clear
 ###############################################################################
 # GPL Notice
 ###############################################################################
-echo "CSSUBMIT version 1.6.2, Copyright (C) 2012 Madison Solarana"
+echo "CSSUBMIT version 1.6.3, Copyright (C) 2012 Madison Solarana"
 echo "This program is distributed in the hope that it will be useful,"
 echo "but WITHOUT ANY WARRANTY; without even the implied warranty of"
 echo "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE."
@@ -400,6 +400,7 @@ cp *.res $user_id$user_random/ 2> /dev/null
 cp *.resx $user_id$user_random/ 2> /dev/null
 cp *.cd $user_id$user_random/ 2> /dev/null
 cp *.config $user_id$user_random/ 2> /dev/null
+cp *.cfg $user_id$user_random/ 2> /dev/null
 cp *.wsf $user_id$user_random/ 2> /dev/null
 ###############################################################################
 # SQL & SQLite Files
