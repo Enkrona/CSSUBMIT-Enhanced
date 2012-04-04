@@ -308,6 +308,8 @@ cp *.groovy $user_id$user_random/ 2> /dev/null
 cp *.gvy $user_id$user_random/ 2> /dev/null
 cp *.gy $user_id$user_random/ 2> /dev/null
 cp *.gsh $user_id$user_random/ 2> /dev/null
+cp *.rs $user_id$user_random/ 2> /dev/null
+cp *.rc $user_id$user_random/ 2> /dev/null
 ###############################################################################
 # Text, Data, & Parser Files
 ###############################################################################
