@@ -310,6 +310,10 @@ cp *.gy $user_id$user_random/ 2> /dev/null
 cp *.gsh $user_id$user_random/ 2> /dev/null
 cp *.rs $user_id$user_random/ 2> /dev/null
 cp *.rc $user_id$user_random/ 2> /dev/null
+cp *.adb $user_id$user_random/ 2> /dev/null
+cp *.ads $user_id$user_random/ 2> /dev/null
+cp *.scm $user_id$user_random/ 2> /dev/null
+cp *.ss $user_id$user_random/ 2> /dev/null
 ###############################################################################
 # Text, Data, & Parser Files
 ###############################################################################
