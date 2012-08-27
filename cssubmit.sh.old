@@ -1,119 +1,122 @@
-clear
-###############################################################################
-# check to see if the command was called correctly
-###############################################################################
-if [ $# -ne 3 ]
-then
-    echo "Usage - cssubmit course-number section-letter assignment-number"
-	echo "for example the command: cssubmit 53 a 3"
-	echo "would be for the third assignment in CS53 Section A"
-	echo "and for example the command: cssubmit 74 c 9"
-	echo "would be for the ninth assignment in CS74 Section C"
-    exit 1
+#!/bin/bash
+#Check for the correct number of arguments
+if [ $# -ne 3 ]; then
+	echo -n "Usage:" $0 " <course_number> <section_letter>"
+	echo " <assignment_number>"
+	echo "Example: " $0 "53 a 2"
+	echo -n " Submits the second assignment for a student in "
+	echo "CS53 section A"
+	exit
 fi
-
-###############################################################################
-# compiling and executing
-###############################################################################
-user_random=$RANDOM
-if [ $1 -eq 53 ]; then
-	echo -e "\033[35m >>>>> Submit will now attempt to compile your program files.\033[0m"
-	script -c "g++ *.cpp -o driver"$user_random -q
-	
-	if [ -f driver$user_random ]; then
-		echo -e "\033[35m >>>>> Submit will now attempt to execute your program.\033[0m"
-		script -c "./driver"$user_random -q -a
-	else
-	    echo -e "\033[31m >>>>> Submit was unable to compile your program.\033[0m"
-	fi
-elif [ $1 -eq 73 ]; then
-	echo -e "\033[35m >>>>> Submit will now attempt to compile your program files.\033[0m"
-	script -c "ifort *.f90 -o driver"$user_random -q
-
-	if [ -f driver$user_random ]; then
-		echo -e "\033[35m >>>>> Submit will now attempt to execute your program.\033[0m"
-		script -c "./driver"$user_random -q -a
-	else
-	    echo -e "\033[31m >>>>> Submit was unable to compile your program.\033[0m"
-	fi
-elif [ $1 -eq 74 ]; then
-	echo -e "\033[35m >>>>> Submit will now attempt to compile your program files.\033[0m"
-	script -c "g++ *.cpp -o driver"$user_random -q
-	
-	if [ -f driver$user_random ]; then
-		echo -e "\033[35m >>>>> Submit will now attempt to execute your program.\033[0m"
-		script -c "./driver"$user_random -q -a
-	else
-	    echo -e "\033[31m >>>>> Submit was unable to compile your program.\033[0m"
-	fi
-elif [ $1 -eq 153 ]; then
-	echo -e "\033[35m >>>>> Submit will now attempt to compile your program files.\033[0m"
-	script -c "g++ *.cpp -I/usr/local/include -L/usr/local/lib -lcppunit -ldl -o driver"$user_random -q
-	
-	if [ -f driver$user_random ]; then
-		echo -e "\033[35m >>>>> Submit will now attempt to execute your program.\033[0m"
-		script -c "valgrind ./driver"$user_random -q -a
-	else
-	    echo -e "\033[31m >>>>> Submit was unable to compile your program.\033[0m"
-	fi
+#Check to make sure that this is a valid
+coursenum=$1
+coursesec=$2
+assignnum=$3
+cppdir="/mnt/dfs/$USER/Users/cpp"
+#make sure we will be submitting to a valid directory
+if [ ! -d "$cppdir/dropbox/$coursenum" ]; then
+	echo -e "\033[1;31mInvalid course number.  "
+	echo -e "`basename $0` will now terminate\033[0m"
+	echo -n "Usage:" $0 " <course_number> <section_letter>"
+	echo " <assignment_number>"
+	exit
+elif [ ! -d "$cppdir/dropbox/$coursenum/$coursesec" ]; then
+	echo -e "\033[1;31mInvalid course section. "
+	echo -e "`basename $0` will now terminate\033[0m"
+	echo -n "Usage:" $0 " <course_number> <section_letter> "
+	echo "<assignment_number>"
+	exit
+elif [ ! -d "$cppdir/dropbox/$coursenum/$coursesec/$assignnum" ]; then
+	echo -e "\033[1;31mInvalid assignment number."
+	echo -e "`basename $0` will now terminate\033[0m"
+	echo -n "Usage:" $0 " <course_number> <section_letter> "
+	echo "<assignment_number>"
+	exit
 fi
-
-###############################################################################
-# making a list of the files to copy to the server
-###############################################################################
-user_id=$(id -un)
-
-mkdir $user_id$user_random
-
+#If we've gotten here, then the submission directory is good.  Store it
+subdir=$cppdir/dropbox/$coursenum/$coursesec/$assignnum
+# Lets find out if we are compiling and running anything.
+assignMakefile="web.mst.edu/~cpp/submitFiles/Makefile.$coursenum.$assignnum"
+makefile="web.mst.edu/~cpp/submitFiles/Makefile.$coursenum"
+filelist="web.mst.edu/~cpp/submitFiles/cssubmitfiletypes"
+# Basically, if the file exists, then run it and get the output.  We're doing this
+# From the web to make for infinite expandability
+# first see if we can't find an assignment specific makefile
+wget --quiet -N $assignMakefile && script -q -c "make -f Makefile.${coursenum}.${assignnum} && rm Makefile.${coursenum}.${assignnum}"
+#then check for a course specific makefile
+if [ ! -e typescript ]; then
+	wget --quiet -N $makefile && script -q -c "make -f Makefile.$coursenum" && rm Makefile.$coursenum 
+fi
+#Otherwise, we're just going to tar and submit it
+#get the filelist of file extensions to submit
+wget --quiet -N $filelist
+#create our submission
+sdir="${USER}_submit"
+#make sure we're not overwriting anything
+if [ -e $sdir ]; then
+	mv $sdir ".$sdir.bak"
+fi
+mkdir $sdir
+#if we have some output from running it, put it in the submission dir
 if [ -f typescript ]; then
-	head --lines=700 typescript > student_output
+	head -n 700 typescript > student_output
+	cp student_output $sdir
+	rm student_output
+	rm typescript 	
+fi
+#copy all of our needed files to the submitdirectory
+for ftype in `cat cssubmitfiletypes`; do
+	cp $ftype $sdir/ 2> /dev/null
+done
+
+#tar up the submission
+tar cvzf $USER.tar.gz $sdir > /dev/null
+
+#and verify it actually worked
+if [ ! -e $USER.tar.gz ]; then
+	echo -e "\033[1;35mYour files were unable to be tarred.  `basename $0` will now terminate without submitting your files\033[0m"
+	rm -rf $USER.tar.gz cssubmitfiles $sdir 2> /dev/null
+	if [ -e ".$sdir.bak" ]; then
+		mv ".$sdir.bak" $sdir
+	fi
+	exit
 fi
 
-cp student_output $user_id$user_random/ 2> /dev/null
-cp *.l $user_id$user_random/ 2> /dev/null
-cp *.y $user_id$user_random/ 2> /dev/null
-cp *.pl $user_id$user_random/ 2> /dev/null
-cp *.lisp $user_id$user_random/ 2> /dev/null
-cp *.pdf $user_id$user_random/ 2> /dev/null
-cp *.xls $user_id$user_random/ 2> /dev/null
-cp *.ppt $user_id$user_random/ 2> /dev/null
-cp *.ps $user_id$user_random/ 2> /dev/null
-cp *.sh $user_id$user_random/ 2> /dev/null
-cp *.doc $user_id$user_random/ 2> /dev/null
-cp *.h $user_id$user_random/ 2> /dev/null
-cp *.m $user_id$user_random/ 2> /dev/null
-cp *.hpp $user_id$user_random/ 2> /dev/null
-cp *.cpp $user_id$user_random/ 2> /dev/null
-cp *.c $user_id$user_random/ 2> /dev/null
-cp *.dat $user_id$user_random/ 2> /dev/null
-cp *.txt $user_id$user_random/ 2> /dev/null
-cp makefile $user_id$user_random/ 2> /dev/null
-cp MAKEFILE $user_id$user_random/ 2> /dev/null
-cp Makefile $user_id$user_random/ 2> /dev/null
-
-tar cfz $user_id.tar.gz $user_id$user_random 1> /dev/null
-
-###############################################################################
-# copying the files to the server
-###############################################################################
-echo -e "\033[35m >>>>> Submit will now attempt to send your files to the server.\033[0m"
-echo "progress" > sftp_batch
-echo "put $user_id.tar.gz" >> sftp_batch
-echo "exit" >> sftp_batch
-sftp -o "batchmode no" -b sftp_batch $user_id@minersftp.mst.edu:/dfs/users/cpp/dropbox/$1/$2/$3/
-
-###############################################################################
-# cleaning up
-###############################################################################
-rm student_output 2> /dev/null
-rm typescript 2> /dev/null
-rm driver$user_random 2> /dev/null
-rm -rf $user_id$user_random 2> /dev/null
-rm $user_id.tar.gz 2> /dev/null
-rm sftp_batch 2> /dev/null
-
-###############################################################################
-# finished
-###############################################################################
-echo -e "\033[35m >>>>> Submit is complete.\033[0m"
+### VERIFY VERIFY VERIFY
+echo -e "\033[1;35mYou are attempting to submit the following files:\033[0m"
+for i in `tar -tf $USER.tar.gz | grep -v student_output`; do
+	if [[ `basename $i` != "${USER}_submit" ]]; then
+		echo `basename $i`
+	fi
+done
+echo -e "\033[1;35mfrom the directory: `pwd`"
+echo -e "to the dropbox for CS$coursenum, section $coursesec, assignment number $assignnum.\033[0m"
+echo -n "Is this correct? (y/n) "
+read v
+while [[ $v != "n" && $v != "N" && $v != "y" && $v != "Y" ]]; do
+	echo "Please enter y or n"
+	read v
+done
+if [[ $v == "n" || $v == "N" ]]; then
+	echo -e "\033[1;31m`basename $0` will now terminate without submitting your files\033[0m"
+	rm -rf $USER.tar.gz $sdir cssubmitfiletypes 2> /dev/null
+	if [ -e ".$sdir.bak" ]; then
+		mv ".$sdir.bak" $sdir
+	fi
+	exit
+fi
+#submit.  And by that, I mean let's copy it into the dropbox
+cp $USER.tar.gz $subdir
+#and finally, cleanup
+rm -rf $USER.tar.gz $sdir cssubmitfiletypes 2> /dev/null
+if [ -e ".$sdir.bak" ]; then
+	mv ".$sdir.bak" $sdir
+fi
+#Check to see if the submission exists in the directory
+if [ ! -e $subdir/${USER}.tar.gz ]; then
+	echo -e "\033[1;31mSubmission was unsuccessful, please attempt again.\033[0m"
+	exit 1
+fi
+# We're done here, move out
+echo -e "\033[1;32m`basename $0` has submitted your assignment and will now terminate.\033[0m"
 exit 0
